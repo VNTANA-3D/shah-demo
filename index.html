@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script src="./src/viewer.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <vntana-viewer id="viewer"></vntana-viewer>
+
+    <script type="module">
+      const {normalize, configureModel, printGraph, getSceneGraph} = vnviewer;
+
+      viewer.src = "https://api.vntana.com/assets/products/e81adf4c-a4d3-4d88-961a-a1683cc66c9f/organizations/shah-luxe/clients/shah-jewelry/d6bcf7d4-7e15-4c05-bde3-64033459608b.glb";
+      viewer.enableJewelry = true;
+      viewer.bloomRadius = 5;
+      viewer.bloomStrength = 0.15;
+      viewer.bloomThreshold = 0.9;
+      viewer.environmentSrc = "https://storage.googleapis.com/static-prd-mul-reg-stn-unif-vntana-com/assets/environment_maps/Studio.hdr"
+      viewer.exposure = 1.4;
+
+      viewer.addEventListener("load", () => {
+        const node = getSceneGraph(viewer);
+        console.log(node);
+
+        configureModel(viewer, {
+          "2c0f8302-9e17-4ab1-871c-52becff9d199": {
+            material: "ruby",
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

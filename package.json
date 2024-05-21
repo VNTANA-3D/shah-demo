@@ -1,0 +1,11 @@
+{
+  "name": "shah-demo",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "npx http-server -o index.html"
+  },
+  "author": "VNTANA",
+  "private": true,
+  "license": "ISC"
+}
